@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="stanley_control" type="stanley_control_node" name="stanley_control_node" output="screen">
+    <param name="vehicle_odom_topic" value="/odom" />
+    <param name="vehicle_cmd_topic" value="/vehicle_cmd" />
+    <param name="roadmap_path" value="$(find stanley_control)/data/cube_town_reference_line.txt" />
+    <param name="target_speed" value="5" />
+    <param name="goal_tolerance" value="0.5" />
+    <param name="k_y" value="1.0" />
+    <param name="control_frequency" value="100" />
+    <param name="vis_frequency" value="0.5" />
+    <param name="path_vis_topic" value="path_vis" />
+    <param name="speed_P" value="0.5" />
+    <param name="speed_I" value="0.00" />
+    <param name="speed_D" value="0.0" />
+    <param name="frame_id" value="gps" />
+  </node>
+  <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find stanley_control)/rviz/stanley.rviz"> </node>
+</launch>
