@@ -1,1 +1,1 @@
-This repo. is the homeworks about control course in shenlan.
+the homework record about control course in shenlan
